@@ -1,0 +1,48 @@
+package org.boldlygoingnowhere.yahoobot;
+
+import java.util.Timer;
+
+public class Maths implements ChatGame
+{
+    boolean currently_active;
+    MessageProtocolProcessor mpp;
+    Timer timer;
+    boolean tablemode;
+    public boolean currently_active()
+    {
+	return currently_active;
+    }
+    public boolean tablemode()
+    {
+	return tablemode;
+    }
+    public void addMPP(MessageProtocolProcessor mpp)
+    {
+	this.mpp = mpp;
+    }
+    public void sayIntroMessage()
+    {
+	mpp.sendToChatRoom("Cesar Maths Bot Version 1.0");
+	mpp.sendToChatRoom("To start, please type /maths");
+    }
+    
+    public void startgame(int param1, String param2)
+    {
+	
+    }
+
+    public void textSent(String textsent, String chatname)
+    {
+
+    }
+    public void pmSent(String textsent, String chatname)
+    {
+
+    }
+
+    public void destroyTimer()
+    {
+	if (timer!= null) timer.cancel();
+    }
+
+}
